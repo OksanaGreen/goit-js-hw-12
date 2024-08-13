@@ -31,7 +31,7 @@ async function handleSubmit(event) {
     iziToast.warning({
       title: 'Caution',
       message: 'You forgot to fill in the form!',
-      position: 'topRight',
+      position: 'top',
     });
     return;
   }
@@ -44,7 +44,7 @@ async function handleSubmit(event) {
         title: 'Search result',
         message:
           'Sorry, there are no images matching your search query. Please try again.',
-        position: 'topRight',
+        position: 'top',
         position: '',
       });
       return;
@@ -65,14 +65,14 @@ async function handleSubmit(event) {
         title: 'Network Error',
         message:
           'Unable to connect. Please check your internet connection and try again.',
-        position: 'topRight',
+        position: 'top',
         position: '',
       });
     } else {
       iziToast.error({
         title: 'Error',
         message: `Error: ${error.message}`,
-        position: 'topRight',
+        position: 'top',
         position: '',
       });
     }
@@ -98,7 +98,7 @@ async function handleMore(event) {
       iziToast.warning({
         title: 'End of Results',
         message: `We're sorry, but you've reached the end of search results.`,
-        position: 'topCenter',
+        position: 'top',
       });
       loadBtn.style.display = 'none';
     }
@@ -106,7 +106,7 @@ async function handleMore(event) {
     iziToast.error({
       color: 'red',
       message: `❌ Error fetching more images: ${error.message}`,
-      position: 'topCenter',
+      position: 'top',
     });
   } finally {
     hideLoader();
