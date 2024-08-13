@@ -31,7 +31,7 @@ async function handleSubmit(event) {
     iziToast.warning({
       title: 'Caution',
       message: 'You forgot to fill in the form!',
-      position: 'topCenter',
+      position: 'topRight',
     });
     return;
   }
@@ -44,7 +44,8 @@ async function handleSubmit(event) {
         title: 'Search result',
         message:
           'Sorry, there are no images matching your search query. Please try again.',
-        position: 'topCenter',
+        position: 'topRight',
+        position: '',
       });
       return;
     }
@@ -64,13 +65,15 @@ async function handleSubmit(event) {
         title: 'Network Error',
         message:
           'Unable to connect. Please check your internet connection and try again.',
-        position: 'topCenter',
+        position: 'topRight',
+        position: '',
       });
     } else {
       iziToast.error({
         title: 'Error',
         message: `Error: ${error.message}`,
-        position: 'topCenter',
+        position: 'topRight',
+        position: '',
       });
     }
   }
